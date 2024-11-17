@@ -96,20 +96,27 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
 
 
 function getPricesFromPlayerApi(items, quantities, sellerName, userName) {
-    var data = {
-        "items": items,
-        "quantities": quantities,
-        "user_name": userName,
-        "seller_name": sellerName
-    }
-    data = JSON.stringify(data);
-    let url = ENDPOINT + '/new_extension_get_prices'
-    let request = new XMLHttpRequest();
 
-    request.open('POST', url, false);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    request.send(data);
-    var responseData = JSON.parse(request.response);
+    console.log("Sending now...");
+    chrome.runtime.sendMessage({
+        from: "content",
+        subject: "fetchPrices"
+    });
 
-    return responseData
+    // var data = {
+    //     "items": items,
+    //     "quantities": quantities,
+    //     "user_name": userName,
+    //     "seller_name": sellerName
+    // }
+    // data = JSON.stringify(data);
+    // let url = ENDPOINT + '/new_extension_get_prices'
+    // let request = new XMLHttpRequest();
+
+    // request.open('POST', url, false);
+    // request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    // request.send(data);
+    // var responseData = JSON.parse(request.response);
+
+    // return responseData
 }

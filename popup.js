@@ -1,8 +1,8 @@
-const ENDPOINT = "https://www.tornexchange.com";
+const ENDPOINT = "http://localhost:8000";
 
 // Update the relevant fields with the new data.
 const setDOMInfo = info => {
-    info.buyer_name;
+    "info.buyer_name";
     info.image_url;
     info.items;
     info.market_prices;

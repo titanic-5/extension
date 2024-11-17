@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Torn Exchange",
+    "name": "Torn Exchange Local",
     "version": "2.2",
     "description": "For Torn traders that use Torn Exchange for their price list. You can now also use TE message templates!",
     "offline_enabled": true,
